@@ -9,6 +9,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
   #config.vm.network "forwarded_port", guest: 4000, host: 4000
   
+  config.ssh.forward_agent = true
   config.ssh.forward_x11 = true
   #config.ssh.username = "vagrant"
   #config.ssh.password = "vagrant"
@@ -16,7 +17,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
   config.vm.provision "chef_solo" do |chef|
     chef.cookbooks_path = ["./chef-repo/cookbooks","./chef-repo/site-cookbooks"]
-    chef.add_recipe "hachioji"
+    chef.add_recipe "apt"
+    chef.add_recipe "hachioji-devtools"
     chef.json = {}
   end
   
