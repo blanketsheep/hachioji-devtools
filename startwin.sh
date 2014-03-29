@@ -1,1 +1,1 @@
-start "start.bat"
+start "start.bat" /wait
