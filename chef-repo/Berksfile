@@ -1,0 +1,4 @@
+site :opscode
+
+cookbook 'hachioji-devtools', path: 'site-cookbooks/hachioji-devtools'
+cookbook 'apt'
