@@ -9,6 +9,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.omnibus.chef_version = :latest
   
   config.vm.network "forwarded_port", guest: 4000, host: 4000
+  config.vm.network "private_network", ip: "192.168.80.4"
   
   config.ssh.forward_agent = true
   config.ssh.forward_x11 = true
